@@ -86,9 +86,9 @@ class ZoomBox extends Component {
 		return (
 			<div className='zoom-box'>
 				<button onClick={ this.open }>Open ZoomBox</button>
-				<div className={'zoom-box-container' + ' ' + (this.state.open && 'open') } ref='zoomBoxContainer' onTouchMove={ this.setZoomedPosition } onMouseMove={ this.setZoomedPosition }>
-					<div className='popup-content'>
-						<span className='cross' onClick={ this.close }></span>
+				<div className={'zoom-box-container' + ' ' + (this.state.open && 'open') } ref='zoomBoxContainer'>
+					<span className='cross' onClick={ this.close }></span>
+					<div className='popup-content' onTouchMove={ this.setZoomedPosition } onMouseMove={ this.setZoomedPosition }>
 						{ this.refs.zoomBoxContainer && this.zoomedImgTag() }
 					</div>
 				</div>
