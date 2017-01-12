@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import * as motion from 'popmotion';
+import React, { Component } from 'react'
+import * as motion from 'popmotion'
+import ZoomBox from '../components/zoomBox'
 
 class App extends Component {
 
 	componentDidMount() {
 
 		// todo: study popmotion and do this properly
-		const h1 = document.querySelector('.app h1');
+		const h1 = document.querySelector('.app h1')
 		const p = document.querySelector('.app p') 
 
 		const tw1 = motion.tween({
@@ -22,7 +23,7 @@ class App extends Component {
 					to: 1
 				}
 			}
-		}).on(h1);
+		}).on(h1)
 
 		const tw2 = motion.tween({
 			ease: motion.easing.anticipate,
@@ -37,7 +38,7 @@ class App extends Component {
 					to: 1
 				}
 			}
-		}).on(p);
+		}).on(p)
 
 		const tl = motion.timeline([
 			{
@@ -47,14 +48,14 @@ class App extends Component {
 				tween: tw2,
 				offset: "-=800"
 			}
-		]);
+		])
 
 
 		setTimeout(() => {
 	
-			tl.start();
+			tl.start()
 
-		}, 800);
+		}, 800)
 
 	}
 
@@ -64,11 +65,14 @@ class App extends Component {
 			<div className="app">
 				<h1>Reactjs Reusable Components</h1>
 				<p>A collection of reusable components to use in Reactjs projects by <span>Punkbit</span></p>
+				<div className="components">
+					<ZoomBox />
+				</div>
 			</div>
-		);
+		)
 
 	}
 
 }
 
-export default App;
+export default App
